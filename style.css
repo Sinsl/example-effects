@@ -138,8 +138,44 @@ body {
 .section {
     position: relative;
     width: 100%;
-    padding: 300px 30px;
+    padding: 200px 30px;
     overflow: hidden;
+}
+
+.title-box {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.title-box h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+.line {
+    width: 300px;
+    height: 7px;
+    margin: 0 auto;
+    background-color: var(--color-blue-50);
+    overflow: hidden;
+    border-radius: 10px;
+}
+.point {
+    position: relative;
+    width: 7px;
+    height: 7px;
+    background-color: #6FEE68;
+    left: -7px;
+    border-radius: 50%;
+    animation: line-move 6s 4s ease-in-out infinite;
+}
+@keyframes line-move {
+    from {left: -7px;}
+    to { left: 100%;}
 }
 .section-2 {
     background-color: #eee;
@@ -172,7 +208,7 @@ body {
 }
 
 .section-3 {
-    background-color: beige;
+    background-color: rgba(111, 238, 104, 0.1);
 }
 .section-3 .round {
     top: -900px;
