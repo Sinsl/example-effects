@@ -1,0 +1,334 @@
+:root {
+    --color-dark: #161B22;
+    --color-dark-25: rgba(24, 33, 45, 0.45);
+    --color-blue: #414D5D;
+    --color-blue-50: rgba(65, 77, 93, 0.5);
+    --color-light-grey: #F5F5F5;
+    --color-grey: #D9D9D9;
+    --color-green: #6FEE68;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+body {
+    width: 100%;
+}
+
+.section-1 {
+    width: 100%;
+    background-color: var(--color-dark);
+    padding: 80px 30px 0;
+    height: 600px;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+.karta {    
+    height: 600px;
+    background-image: url(./images/fon-materik.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.karta::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-blue);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.logo {
+    width: 100%;
+    max-width: 500px;
+    padding: 80px 20px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo-round {
+    width: 100px;
+    height: 100px;
+    border: 6px solid white;
+    border-radius: 50%;
+}
+.logo-text {
+    width: 300px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+}
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    animation: appearance 6s linear;
+}
+
+@keyframes appearance {
+    0% {
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(111, 238, 104, 0.30);
+    }
+    20% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(111, 238, 104, 0.30);
+    }
+    70% {
+        opacity: 1;
+        box-shadow: 0 0 20px 15px rgba(111, 238, 104, 0.30);
+    }
+    100% {
+        opacity: 0;
+        box-shadow: 0 0 20px 15px rgba(111, 238, 104, 0.30);
+    }
+}
+
+.desc {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--color-dark-25);
+    padding: 15px;
+}
+.title-desc {
+    color: var(--color-green);
+}
+.text-coursor {
+    animation: flashing 1s linear infinite;
+}
+@keyframes flashing {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    padding: 300px 30px;
+    overflow: hidden;
+}
+.section-2 {
+    background-color: #eee;
+}
+.round {
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.section-2 .round {
+    top: -900px;
+    left: -900px;
+}
+.section-2 .text-box {
+    opacity: 0;
+    /* transition: opacity 2s; */
+}
+.el-fadein {
+    animation: el-fadein 2s linear both;
+}
+@keyframes el-fadein {
+    to { opacity: 1; }
+    from { opacity: 0; }
+}
+.text-box {
+    display: flex;
+    gap: 50px;
+}
+
+.section-3 {
+    background-color: beige;
+}
+.section-3 .round {
+    top: -900px;
+    right: -900px;
+}
+
+.section-3 .text-left {
+    position: relative;
+    left: -100%;
+}
+.section-3 .text-right {
+    position: relative;
+    left: 100%;
+}
+.section-3 .el-move-center .text-left,
+.section-3 .el-move-center .text-right {
+    left: 0;
+}
+.section-4,
+.section-5 {
+    padding: 150px 30px;
+}
+.section-4 .text-left,
+.section-4 .text-right {
+    transform: scale(0.1, 0.1);
+}
+.section-5 {
+    background-color: #161B22;
+}
+#container {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    transform: rotate(45deg);
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+.section-4 .content,
+.section-5 .content {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 100px 30px;
+}
+
+.an-LeftToRight {
+    animation: an-LeftToRight 1s linear both;
+}
+@keyframes an-LeftToRight {
+    from { left: -100%; }
+    to { left: 0; }
+}
+.an-RightToLeft {
+    animation: an-RightToLeft 1s linear both;
+}
+@keyframes an-RightToLeft {
+    from { left: 100%; }
+    to { left: 0; }
+}
+.an-ZoomIn {
+    animation: an-ZoomIn 1s linear both;
+}
+@keyframes an-ZoomIn {
+    from { transform: scale(0.1, 0.1); }
+    to { transform: scale(1, 1); }
+}
+
+.section-5 .text-box {
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-5 .text-left,
+.section-5 .text-center,
+.section-5 .text-right {
+    width: 33%;
+    overflow: hidden;
+}
+.section-5 .text-right {
+    position: relative;
+    height: 400px
+}
+.section-5 .text-left {
+    padding: 70px 10px;    
+}
+.block-text {
+    width: 100%;
+    margin-left: -100%;
+}
+.text-btn {
+    position: relative;
+    margin: 0 auto;
+    margin-left: -100%;
+    width: 200px;
+    background-color: #D9D9D9;
+    border: 1px solid #414D5D;
+    text-align: center;
+    padding: 7px;
+}
+.box-1 {
+    position: absolute;
+    top: 20px;
+    right: 100%;
+    width: 200px;
+    height: 360px;
+    background-color: cadetblue;
+}
+.box-2 {
+    position: absolute;
+    top: 40px;
+    right: 100%;
+    width: 200px;
+    height: 320px;
+    background-color: white;
+}
+.box-3 {
+    position: absolute;
+    top: 60px;
+    right: 100%;
+    width: 300px;
+    height: 280px;
+    background-color: #414D5D;
+}
+.an-box-1 {
+    animation: an-BoxRange-1 .5s .1s linear both;
+}
+@keyframes an-BoxRange-1 {
+    from { right: 100%; }
+    to { right: 0; }
+}
+.an-box-2 {
+    animation: an-BoxRange-2 .5s .6s linear both;
+}
+@keyframes an-BoxRange-2 {
+    from { right: 100%; }
+    to { right: 20px; }
+}
+.an-box-3 {
+    animation: an-BoxRange-3 .5s 1s linear both;
+}
+@keyframes an-BoxRange-3 {
+    from { right: 100%; }
+    to { right: 40px; }
+}
+.an-box-4 {
+    animation: an-BoxRange-4 .5s 1s linear both;
+}
+@keyframes an-BoxRange-4 {
+    from { margin-left: -100%; }
+    to { margin-left: calc(50% - 100px); }
+}
+.an-box-5 {
+    animation: an-BoxRange-5 .5s 1s linear both;
+}
+@keyframes an-BoxRange-5 {
+    from { margin-left: -100%; }
+    to { margin-left: 0; }
+}
+
+
